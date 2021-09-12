@@ -1,4 +1,6 @@
 const loadProducts = () => {
+  document.getElementById("all-products").innerHTML = "Loading...";
+
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
     .then((response) => response.json())
@@ -8,6 +10,8 @@ loadProducts();
 
 // show all product in UI 
 const showProducts = (products) => {
+  document.getElementById("all-products").textContent = "";
+
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
     const image = product.image;
