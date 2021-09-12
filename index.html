@@ -21,11 +21,11 @@
 <body>
   <header></header>
   <main class="main">
-    <div class="search-field">
-      <div class="search-box">
-        <input id="input-field" class="search-field" type="text" />
-        <button type="button" class="btn btn-primary search-button" data-toggle="button" aria-pressed="false"
-          autocomplete="off" id="search-btn" onclick="loadProducts()">
+    <div class="container">
+      <div class="search-box row m-auto">
+        <input id="input-field" class="search-field col-9 rounded" type="text" placeholder="type here" />
+        <button type="button" class="btn btn-warning fw-bold search-button col-3" data-toggle="button"
+          aria-pressed="false" autocomplete="off" id="search-btn" onclick="loadProducts()">
           Search
         </button>
       </div>
@@ -76,7 +76,7 @@
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button class="btn btn-warning text-center fw-bold">Buy Now</button>
           </div>
         </div>
       </div>
