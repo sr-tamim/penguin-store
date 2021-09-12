@@ -1,5 +1,5 @@
 const loadProducts = () => {
-  document.getElementById("all-products").innerHTML = "Loading...";
+  document.getElementById("all-products").innerHTML = "<h1>Loading...</h1>";
 
   const url = `https://fakestoreapi.com/products`;
   fetch(url)
