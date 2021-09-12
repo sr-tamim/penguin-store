@@ -16,7 +16,7 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     const image = product.image;
     const div = document.createElement("div");
-    div.classList.add("product", "text-center", "p-0");
+    div.classList.add("product", "text-center", "px-2");
     div.innerHTML = `
     <div class="single-product">
       <div class="mb-3">
@@ -28,7 +28,7 @@ const showProducts = (products) => {
       Rated by: ${product.rating.count} users</h6>
       <h4 class="fw-bold my-3">Price: $${product.price}</h4>
 
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary fw-bold">Add to Cart</button>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary fw-bold my-3">Add to Cart</button>
 
       <button id="details-btn" class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#detailsContainer" onclick="getDetails(${product.id})">
         Details
