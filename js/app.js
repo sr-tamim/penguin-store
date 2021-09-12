@@ -19,12 +19,16 @@ const showProducts = (products) => {
         <img class="product-image" src=${image}></img>
       </div>
       <h5 class="fw-bold">${product.title}</h5>
-      <h6 class="fw-bold text-secondary text-capitalize">Category: ${product.category}</h6>
-      <h6>Average rating: ${product.rating.rate}/5.0 <br>
+      <h6 class="fw-bold text-capitalize">Category: ${product.category}</h6>
+      <h6 class="fw-bold text-secondary">Average rating: ${product.rating.rate}/5.0 <br>
       Rated by: ${product.rating.count} users</h6>
       <h4 class="fw-bold my-3">Price: $${product.price}</h4>
+
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary fw-bold">Add to Cart</button>
-      <button id="details-btn" class="btn btn-warning fw-bold">Details</button>
+
+      <button id="details-btn" class="btn btn-warning fw-bold" data-bs-toggle="modal" data-bs-target="#detailsContainer" onclick="getDetails(${product.id})">
+        Details
+      </button>
     </div>
       `;
     document.getElementById("all-products").appendChild(div);
@@ -84,3 +88,31 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal;
 };
+
+
+
+const getDetails = productID => {
+  document.getElementById('modal-name').innerHTML = '';
+  document.getElementById('modal-details').innerHTML = "Loading...";
+
+  const url = `https://fakestoreapi.com/products/${productID}`;
+  fetch(url).then(res => res.json()).then(data => showDetails(data));
+
+}
+
+function showDetails(product) {
+  document.getElementById('modal-name').innerHTML = product.title;
+
+  document.getElementById('modal-details').innerHTML = `
+      <img src="${product.image}" class="img-fluid">
+      <div class="my-3 lh-lg p-1">
+          <p class="lh-sm mb-3 text-secondary" style="text-align:justify">${product.description}</p>
+          <h5 class="text-capitalize"><b>Category:</b> ${product.category}</h5>
+          <h5><b>Rating:</b> ${product.rating.rate} out of 5.0</h5>
+          <h5><b>Rated by:</b> ${product.rating.count} users</h5>
+          <h2 class="display-6 my-3">
+            <span class="fw-bold">Price:</span> $${product.price}
+          </h2>
+          <a role="button" class="text-decoration-none text-dark text-center d-block fw-bold bg-warning py-1 mt-3 rounded-3" onclick="addToCart(${product.id},${product.price})">Add to Cart</a>
+      </div>`;
+}

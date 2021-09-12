@@ -18,7 +18,7 @@ body {
 }
 .single-product {
   border-radius: 10px;
-  padding: 30px 7% 40px;
+  padding: 30px 5% 40px;
   transition: 400ms;
 }
 .single-product:hover {
