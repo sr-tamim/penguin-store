@@ -21,11 +21,34 @@ body {
 .single-product {
   border-radius: 10px;
   padding: 30px 5%;
-  transition: 400ms;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  /* transition: 400ms; */
+  position: relative;
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
-.single-product:hover {
+/* .single-product:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+} */
+.single-product::before,.single-product::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.single-product::before{
+  z-index: -1;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+}
+.single-product::after{
+  z-index: -2;
+  background: linear-gradient(125deg, red, blue);
+  filter: blur(5px);
+  opacity: 0.1;
+  transition: 400ms;
+}
+.single-product:hover::after{
+  filter: blur(10px);
+  opacity: 0.3;
 }
 .product-image {
   width: 150px;
@@ -34,10 +57,26 @@ body {
 /* cart style */
 .cart {
   width: 360px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   position: fixed;
 }
+.cart::before,.cart::after{
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.cart::before{
+  z-index: -1;
+  background: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1) inset;
+}
+.cart::after{
+  z-index: -2;
+  background: linear-gradient(45deg, orangered, blue);
+  filter: blur(10px) opacity(.3);
+}
+
 @media only screen and (max-width: 992px) {
   .cart {
     width: 450px;
