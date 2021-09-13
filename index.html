@@ -21,9 +21,12 @@
 <body>
   <header></header>
   <main class="main">
+    <!-- search area -->
     <div class="container">
       <div class="search-box row m-auto">
+        <!-- search input field -->
         <input id="input-field" class="search-field col-8 col-md-9 rounded" type="text" placeholder="type here" />
+        <!-- search button -->
         <button type="button" class="btn btn-warning fw-bold search-button col-4 col-md-3" data-toggle="button"
           aria-pressed="false" autocomplete="off" id="search-btn" onclick="loadProducts()">
           Search
@@ -31,6 +34,7 @@
       </div>
     </div>
     <div class="row w-100 m-0">
+      <!-- cart area start -->
       <div class="col-12 col-lg-5 col-xl-4 px-3 cart-main">
         <div class="cart px-3 py-4 mx-auto" id="my-cart">
           <table class="table">
@@ -81,10 +85,13 @@
           </div>
         </div>
       </div>
+      <!-- cart area end -->
+      <!-- products container start -->
       <div class="col-12 col-lg-7 col-xl-8">
         <div id="all-products" class="w-100 row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5 m-auto px-2">
         </div>
       </div>
+      <!-- products container end -->
     </div>
 
     <!-- Details Modal -->
@@ -98,9 +105,12 @@
 
         <div class="modal-content p-3 p-sm-4">
           <div class="modal-header border-0 align-items-start">
+            <!-- product title -->
             <h2 class="modal-title fw-bold lh-1 fs-4 pb-4 pe-3" id="modal-name"></h2>
+            <!-- details modal close button -->
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
+          <!-- details body -->
           <div class="modal-body fs-5 p-0" id="modal-details">
           </div>
         </div>

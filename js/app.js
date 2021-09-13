@@ -1,4 +1,7 @@
+
+// load products from fakestore API
 const loadProducts = () => {
+  // add Loading message
   document.getElementById("all-products").innerHTML = "<h1>Loading...</h1>";
 
   const url = `https://fakestoreapi.com/products`;
@@ -6,11 +9,11 @@ const loadProducts = () => {
     .then((response) => response.json())
     .then((data) => showProducts(data));
 };
-loadProducts();
+loadProducts();    // get products when webpage loads in browser
 
 // show all product in UI 
 const showProducts = (products) => {
-  document.getElementById("all-products").textContent = "";
+  document.getElementById("all-products").textContent = "";  // clear Loading message
 
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
@@ -35,6 +38,7 @@ const showProducts = (products) => {
       </button>
     </div>
       `;
+    // push new product to all products container
     document.getElementById("all-products").appendChild(div);
   }
 };

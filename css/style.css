@@ -2,6 +2,7 @@ body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
+/* search area styles */
 .search-box {
   max-width: 800px;
   padding-top: 40px;
@@ -16,6 +17,7 @@ body {
   outline: none;
   border: 2px dashed #d19d00;
 }
+/* each product container styles */
 .single-product {
   border-radius: 10px;
   padding: 30px 5%;
@@ -29,6 +31,7 @@ body {
   width: 150px;
   height: 150px;
 }
+/* cart style */
 .cart {
   width: 360px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
