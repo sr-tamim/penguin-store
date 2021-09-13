@@ -1,6 +1,12 @@
+/* import Glory font */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+
+*{
+  font-family: "PT Sans", sans-serif;
+}
+
 body {
   overflow-x: hidden;
-  font-family: "Montserrat", sans-serif;
 }
 /* search area styles */
 .search-box {
@@ -15,19 +21,15 @@ body {
 }
 .search-field:hover {
   outline: none;
-  border: 2px dashed #d19d00;
+  border: 2px dotted #ffc107;
 }
 /* each product container styles */
 .single-product {
   border-radius: 10px;
   padding: 30px 5%;
-  /* transition: 400ms; */
   position: relative;
-  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
 }
-/* .single-product:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-} */
+/* gradient shadow styles */
 .single-product::before,.single-product::after{
   content: '';
   position: absolute;
@@ -60,7 +62,8 @@ body {
   border-radius: 10px;
   position: fixed;
 }
-.cart::before,.cart::after{
+/* gradient shadow styles */
+.cart::before, .cart::after{
   content: '';
   position: absolute;
   inset: 0;
