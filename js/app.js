@@ -42,6 +42,8 @@ const showProducts = (products) => {
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+// add product to cart
 let count = 0;
 const addToCart = (id, price) => {
   count = count + 1;
@@ -53,6 +55,7 @@ const addToCart = (id, price) => {
   updateTotal();
 };
 
+// get inner text from an element
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
@@ -98,7 +101,7 @@ const updateTotal = () => {
 };
 
 
-
+// get details of a product from API
 const getDetails = productID => {
   document.getElementById('modal-name').innerHTML = '';
   document.getElementById('modal-details').innerHTML = "Loading...";
@@ -108,6 +111,7 @@ const getDetails = productID => {
 
 }
 
+// show details in ui
 function showDetails(product) {
   document.getElementById('modal-name').innerHTML = product.title;
 
