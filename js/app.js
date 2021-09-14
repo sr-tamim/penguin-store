@@ -27,9 +27,18 @@ const showProducts = (products) => {
       </div>
       <h5 class="fw-bold">${product.title}</h5>
       <h6 class="fw-bold text-capitalize">Category: ${product.category}</h6>
-      <h6 class="fw-bold text-secondary">Average rating: ${product.rating.rate}/5.0 <br>
-      Rated by: ${product.rating.count} users</h6>
-      <h4 class="fw-bold my-3">Price: $${product.price}</h4>
+      
+      <div class="d-flex justify-content-center align-items-center">
+        <span class="starsContainer">
+          <span class="stars" style="background-position-x:-${100 - product.rating.rate * 20}px">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+              class="fas fa-star"></i>
+          </span>
+        </span>
+        <div><i class="fas fa-user"></i> ${product.rating.count}</div>
+      </div>
+      
+      <h4 class="fw-bold mt-2">Price: $${product.price}</h4>
 
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-primary fw-bold my-3">Add to Cart</button>
 

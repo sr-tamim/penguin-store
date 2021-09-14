@@ -38,7 +38,7 @@ body {
 }
 .single-product::before{
   z-index: -1;
-  background: white;
+  background: rgb(253, 253, 253);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
 }
 .single-product::after{
@@ -90,4 +90,25 @@ body {
   .cart {
     width: 100%;
   }
+}
+
+/* rating star styles */
+.stars{
+  position: relative;
+  background-image: linear-gradient(90deg,orange, #ffc107);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 100%;
+}
+.starsContainer{
+  display: block;
+  width: 100px;
+  margin-right: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
